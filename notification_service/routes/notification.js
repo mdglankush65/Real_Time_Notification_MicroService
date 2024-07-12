@@ -1,10 +1,11 @@
 const express = require('express');
+const { createNotification, fetchAllNotification, fetchNotification, updateNotification } = require('./index')
 
 const router = express.Router();
 
-router.post('/');
-router.get('/');
-router.get('/:id');
-router.put('/:id');
+router.post('/', createNotification);
+router.get('/', fetchAllNotification);
+router.get('/:id', fetchNotification);
+router.put('/:id', updateNotification);
 
 module.exports = router;
